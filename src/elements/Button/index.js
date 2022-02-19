@@ -33,27 +33,30 @@ export default function Button(props) {
   }
 
   if (props.type === "link") {
-    props.isExternal ? (
-      // eslint-disable-next-line react/jsx-no-target-blank
-      <a
-        href={props.href}
-        className={className.join(" ")}
-        style={props.style}
-        target={props.target === "_blank" ? "_blank" : null}
-        rel={props.target === "_blank" ? "noopener noreferrer" : null}
-      >
-        {props.children}
-      </a>
-    ) : (
-      <Link
-        to={props.href}
-        className={className.join(" ")}
-        style={props.style}
-        onClick={onCLick}
-      >
-        {props.children}
-      </Link>
-    );
+    if (props.isExternal) {
+      return (
+        <a
+          href={props.href}
+          className={className.join(" ")}
+          style={props.style}
+          target={props.target === "_blank" ? "_blank" : null}
+          rel={props.target === "_blank" ? "noopener noreferrer" : null}
+        >
+          {props.children}
+        </a>
+      );
+    } else {
+      return (
+        <Link
+          to={props.href}
+          className={className.join(" ")}
+          style={props.style}
+          onClick={onCLick}
+        >
+          {props.children}
+        </Link>
+      );
+    }
   }
 
   return (
