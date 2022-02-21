@@ -5,6 +5,7 @@ import Hero from "parts/Hero";
 import MostPicked from "parts/MostPicked";
 import Categories from "parts/Categories";
 import Testimony from "parts/Testimony";
+import Footer from "parts/Footer";
 
 import landingPageData from "json/landingPage.json";
 
@@ -21,6 +22,7 @@ export default function LandingPage(props) {
       />
       <Categories data={landingPageData.categories} />
       <Testimony data={landingPageData.testimonial} />
+      <Footer />
     </>
   );
 }
