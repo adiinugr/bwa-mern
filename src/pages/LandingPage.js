@@ -3,9 +3,10 @@ import React, { useRef } from "react";
 import Header from "parts/Header";
 import Hero from "parts/Hero";
 import MostPicked from "parts/MostPicked";
+import Categories from "parts/Categories";
+import Testimony from "parts/Testimony";
 
 import landingPageData from "json/landingPage.json";
-import Categories from "parts/Categories";
 
 export default function LandingPage(props) {
   const refMostPicked = useRef();
@@ -19,6 +20,7 @@ export default function LandingPage(props) {
         data={landingPageData.mostPicked}
       />
       <Categories data={landingPageData.categories} />
+      <Testimony data={landingPageData.testimonial} />
     </>
   );
 }
